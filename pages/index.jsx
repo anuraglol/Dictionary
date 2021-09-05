@@ -54,7 +54,7 @@ export default function Home() {
         <input
           type="text"
           onChange={(e) => setVal(e.target.value)}
-          className="outline-none text-center w-12"
+          className="outline-none text-center overflow-hidden"
         />
         <p className="w-full flex justify-center">
           <button
