@@ -8,9 +8,11 @@ module.exports = {
       primary: "#020202",
       main: "#ffc700",
       white: "#fff",
+      purple: "#563afe",
     },
     fontFamily: {
       poppins: "Poppins",
+      source: "Source Code Pro, monospace",
     },
     width: {
       main: "16em",

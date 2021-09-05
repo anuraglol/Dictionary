@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
 
+import Footer from "./Footer";
+
 export default function Home() {
   // hooks
   var [val, setVal] = useState("hello");
@@ -8,6 +10,7 @@ export default function Home() {
   var [phonetic, setPhonetic] = useState("");
   var [src, setSrc] = useState("");
   var [word, setWord] = useState("");
+  var [example, setEx] = useState("");
 
   const fetchWord = async () => {
     try {
@@ -18,6 +21,7 @@ export default function Home() {
       setWord(data[0].word);
       setDef(data[0].meanings[0].definitions[0].definition);
       setPhonetic(data[0].phonetic);
+      setEx(data[0].meanings[0].definitions[0].example);
       let SRC = data[0].phonetics[0].audio;
       setSrc(`https:${SRC}`);
     } catch (error) {
@@ -41,12 +45,16 @@ export default function Home() {
           href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,900,900italic"
+          rel="stylesheet"
+        />
       </Head>
-      <div className="main font-poppins font-medium text-xl bg-white p-4 rounded-lg shadow-2xl w-main">
+      <div className="main font-poppins font-medium text-xl bg-white p-4 rounded-lg shadow-2xl w-main m-4">
         <input
           type="text"
           onChange={(e) => setVal(e.target.value)}
-          className="outline-none"
+          className="outline-none text-center"
         />
         <p className="w-full flex justify-center">
           <button
@@ -63,9 +71,14 @@ export default function Home() {
           </span>
 
           <p className="m-1">{def}</p>
+          <p>
+            <p>example:</p>
+            <p>{example}</p>
+          </p>
           <audio src={src} controls></audio>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }

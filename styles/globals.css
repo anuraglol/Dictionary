@@ -1,13 +1,14 @@
 body {
   height: 100vh;
   display: flex;
+  justify-content: space-between;
   justify-content: center;
-  align-items: center;
   background: linear-gradient(
     90deg,
     hsla(333, 100%, 53%, 1) 0%,
     hsla(33, 94%, 57%, 1) 100%
   );
+  overflow-y: scroll;
 }
 input {
   border-bottom: solid #020202;
