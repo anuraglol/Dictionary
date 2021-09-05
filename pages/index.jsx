@@ -50,12 +50,14 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="main font-poppins font-medium text-xl bg-white p-4 rounded-lg shadow-2xl w-main m-4">
-        <input
-          type="text"
-          onChange={(e) => setVal(e.target.value)}
-          className="outline-none text-center overflow-hidden"
-        />
+      <div className="main font-poppins font-medium text-xl bg-white p-4 rounded-lg shadow-2xl w-main m-4 overflow-hidden">
+        <p className="w-full flex justify-center">
+          <input
+            type="text"
+            onChange={(e) => setVal(e.target.value)}
+            className="outline-none text-center overflow-hidden"
+          />
+        </p>
         <p className="w-full flex justify-center">
           <button
             onClick={fetchWord}
