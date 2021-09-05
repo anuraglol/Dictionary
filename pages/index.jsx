@@ -56,6 +56,7 @@ export default function Home() {
             type="text"
             onChange={(e) => setVal(e.target.value)}
             className="outline-none text-center overflow-hidden"
+            placeholder="Enter a Word..."
           />
         </p>
         <p className="w-full flex justify-center">
