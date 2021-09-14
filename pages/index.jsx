@@ -13,6 +13,7 @@ export default function Home() {
   var [example, setEx] = useState("");
 
   const fetchWord = async () => {
+    toast.success("Coming Up...");
     try {
       let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${val}`;
       const res = await fetch(url);
@@ -68,7 +69,7 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-      <Toaster />
+      <Toaster position="top-left" />
     </>
   );
 }
