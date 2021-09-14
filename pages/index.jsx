@@ -1,7 +1,7 @@
-import Head from "next/head";
 import { useState } from "react";
-
+import Meta from "./head";
 import Footer from "./Footer";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
   // hooks
@@ -32,28 +32,10 @@ export default function Home() {
       console.log(error);
     }
   };
+
   return (
     <>
-      <Head>
-        <link
-          rel="shortcut icon"
-          href="./sticky-note-solid.svg"
-          type="image/x-icon"
-        />
-        <title>Dictionary</title>
-        <meta
-          name="description"
-          content="A Web-App to get meaning, example and pronounciation of any word!!"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,900,900italic"
-          rel="stylesheet"
-        />
-      </Head>
+      <Meta />
       <div className="main font-poppins font-medium text-xl bg-white p-4 rounded-lg shadow-2xl w-main m-4 overflow-hidden">
         <p className="w-full flex justify-center">
           <input
@@ -85,7 +67,8 @@ export default function Home() {
           <audio src={src} controls></audio>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
+      <Toaster />
     </>
   );
 }
